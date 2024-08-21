@@ -57,38 +57,35 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="shortcut icon" href="../ASSET/CARDBINDEX V5.png" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/LoginForm.css">
-    <?php include 'theme.php'; ?>
-    <title>Connexion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="CSS/form.css">
 </head>
-
 <body>
-    <form action="loginForm.php" method="POST">
-        <h1>Se connecter</h1>
-        <div>
-            <input id="email" placeholder="Mail" type="email" name="email" required>
+    <form action="" method="POST">
+        <h1>Inscription</h1>
+        
+        <input type="text" id="firstname" name="firstname" placeholder="Prénom" required>
+        <input type="text" id="lastname" name="lastname" placeholder="Nom" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+        
+        <div id="radio">
+            <input type="radio" name="gender" value="male" required> Homme
+            <input type="radio" name="gender" value="female" required> Femme
         </div>
-        <div>
-            <input id="password" placeholder="Mot de passe" type="password" name="password" required>
+        
+        <div id="captcha-box">
+            <input type="text" name="captcha_answer" placeholder="Entrez le CAPTCHA" required>
+          
         </div>
-        <?php
-        // Afficher un message d'erreur si les informations sont incorrectes
-        if ($errorInfo) {
-            echo "<p class='error'>Utilisateur ou Mot de passe incorrect</p>";
-        }
-        ?>
-        <input type="submit" class="btn" value="Se connecter">
-        <a href="form.php">
-            <div id="btn2">S'inscrire</div>
-        </a>
-    </form>
-    <p>Mot de passe oublié ? <u style="color:#f1c40f;">Cliquez ici !</u></p>
-</body>
 
+        <input type="hidden" name="captcha_id" value="<?php echo $captcha_id; ?>">
+
+        <button type="submit" class="btn">S'inscrire</button>
+    </form>
+</body>
 </html>
