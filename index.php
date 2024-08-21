@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('./PHP/db.php');
+include_once('PHP/db.php');
 ?>
 
 <!DOCTYPE html>
@@ -10,9 +10,12 @@ include_once('./PHP/db.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fun Fair - Parc d'Attractions</title>
     <link rel="stylesheet" href="CSS/index.css">
+    <?php include 'PHP/theme.php'; ?>
+    
 </head>
     
 <body>
+    <?php include 'PHP/nav.php'; ?>
     <header>
         <h1>Bienvenue à Fun Fair</h1>
         <p>Le parc d'attractions où le plaisir ne s'arrête jamais !</p>
@@ -35,7 +38,7 @@ include_once('./PHP/db.php');
         <p>Email: projet.annuel3tan@gmail.com</p>
         <h2>Nos réseaux :</h2>
         <a href="https://github.com/Suussonic/Fun-Fair" target="_blank">
-            <img src="./ASSET/GITHUB.png" alt="GITHUB">
+            <img src="ASSET/GITHUB.png" alt="GITHUB">
         </a>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
